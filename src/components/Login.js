@@ -30,10 +30,10 @@ const Login = (props) => {
     }
 
     return (
-        <div className="container">
+        <div className={`container my-3 bg-${props.mode}`} style={{color: props.mode === 'light' ? 'black' : 'white'}}>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
+                    <label htmlFor="email" className="form-label my-3">Email address</label>
                     <input type="email" name="email" className="form-control" id="email" aria-describedby="emailHelp" value={credential.email} onChange={onChange} />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
@@ -41,7 +41,7 @@ const Login = (props) => {
                     <label htmlFor="password" className="form-label">Password</label>
                     <input type="password" name="password" className="form-control" id="password" value={credential.password} onChange={onChange} />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary my-3">Submit</button>
             </form>
         </div>
     )

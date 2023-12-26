@@ -31,10 +31,10 @@ const Signup = (props) => {
     }
 
     return (
-        <div className="container ">
+        <div className={`container my-3 bg-${props.mode}`} style={{color: props.mode === 'light' ? 'black' : 'white'}}>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="name" className="form-label">Name</label>
+                    <label htmlFor="name" className="form-label my-3">Name</label>
                     <input type="text" className="form-control" id="name" name="name" onChange={onChange}aria-describedby="emailHelp"/>
                 </div>
                 <div className="mb-3">
@@ -49,7 +49,7 @@ const Signup = (props) => {
                     <label htmlFor="cpassword" className="form-label">Confirm Password</label>
                     <input type="password" className="form-control" id="cpassword" name="cpassword" onChange={onChange} minLength={5} required/>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary my-3">Submit</button>
             </form>
         </div>
     )

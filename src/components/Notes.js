@@ -34,15 +34,15 @@ const Notes = (props) => {
     }
 
     return (
-        <div>
-            <AddNote showAlert={props.showAlert} />
+        <div style={{color: props.mode === 'light' ? 'black' : 'white'}}>
+            <AddNote mode={props.mode} showAlert={props.showAlert} />
 
             <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className={`modal fade bg-${props.mode}`} id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
-                    <div className="modal-content">
+                    <div className={`modal-content bg-${props.mode}`}>
                         <div className="modal-header">
                             <h1 className="modal-title fs-5" id="exampleModalLabel">Edit note</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -70,15 +70,15 @@ const Notes = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="row my-3">
+            <div className={`row my-3 `}>
                 <h1>Your Notes</h1>
-                <div className="container">
+                <div className={`container`}>
                     {notes.length === 0 && 'No notes to display'}
                 </div>
                 { ( notes && notes.length > 0 )
                     ?
                 notes.map((note) => {
-                    return <Noteitem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert} />;
+                    return <Noteitem mode = {props.mode} key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert} />;
                 }): null}
             </div>
         </div>

@@ -5,7 +5,7 @@ import Notes from './Notes'
 const Home = (props) => {
   return (
     <div>
-      <Notes showAlert = {props.showAlert} />
+      <Notes mode = {props.mode} showAlert = {props.showAlert} />
     </div>
   )
 }

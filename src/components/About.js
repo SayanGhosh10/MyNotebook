@@ -1,9 +1,9 @@
-import React,{useContext, useEffect} from 'react'
+import React from 'react'
 
-const About = () => {
+const About = (props) => {
   return (
-    <div>
-      This is about
+    <div style={{color: props.mode === 'light' ? 'black' : 'white'}}>
+      This is Your virtual and personal notebook. You can use it as you want. Thank You.
     </div>
   )
 }
