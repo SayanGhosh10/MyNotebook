@@ -6,7 +6,7 @@ const Signup = (props) => {
     let navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = 'http://localhost:5000/api/auth/createuser';
+        const url = 'https://mynotebbokbackend.onrender.com/api/auth/createuser';
         const response = await fetch(url, {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             headers: {

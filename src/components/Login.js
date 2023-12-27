@@ -6,7 +6,7 @@ const Login = (props) => {
     let navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = 'http://localhost:5000/api/auth/login';
+        const url = 'https://mynotebbokbackend.onrender.com/api/auth/login';
         const response = await fetch(url, {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             headers: {
