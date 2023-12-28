@@ -2,7 +2,7 @@ import { useState } from "react";
 import NoteContext from "./NoteContext";
 
 const NotesState = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://mynotebbokbackend.onrender.com";
   const notesInitial = []
   const [notes, setNotes] = useState(notesInitial)
 
